@@ -72,8 +72,12 @@ function removeDuplicates(workplaceAccidents) {
     for (let j = 0; j < workplaceAccidents.length; j++) {
       if (workplaceAccidents[i] === workplaceAccidents[j] && i !== j) {
         workplaceAccidents.splice(j, 1);
-        i !== 0 ? i-- : null
-        j !== 0 ? j-- : null
+        if (i !== 0) {
+          i--;
+        }
+        if (j !== 0) {
+          j--
+        }
       }
     }
   }
@@ -169,7 +173,11 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 function looper() {
   for (let i = 0; i < numsArr.length; i++) {
     for (let j = 0; j < numsArr[i].length; j++) {
-      numsArr[i][j] % 2 === 0 ? numsArr[i][j] = 'even' : numsArr[i][j] = 'odd'
+      if (numsArr[i][j] % 2 === 0) {
+        numsArr[i][j] = 'even'
+      } else {
+        numsArr[i][j] = 'odd'
+      } 
     }
   }
   return numsArr
